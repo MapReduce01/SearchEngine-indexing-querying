@@ -58,7 +58,6 @@ Part 2:
 
 Part 3:
 
-	I used CMPT456Analyzer in this part.
 	run < ant -f lucene/demo/build.xml run-simple-metrics-demo > for Simple Metrics
 	run < ant -f lucene/demo/build.xml \-Ddocs=lucene/demo/data/wiki-small/en/articles/ run-tfidf-indexing > for TFIDFHtmlIndexFiles
 	run < ant -f lucene/demo/build.xml run-tfidf-search > for TFIDFSearchFiles.
