@@ -1,5 +1,6 @@
 Project Data
-● We are going to use Wiki Small data (6043 documents) from our textbook
+
+● We are going to use Wiki Small data (6043 documents) from the textbook
 <http://www.search-engines-book.com/collections/>. 
 
 ● We have included the data for you, within the codebase at location lucene/demo/data.
@@ -7,6 +8,7 @@ In the subsequent sections, you will use it in to demonstrate indexing and query
 process.
 
 Compiling
+
 ● Build Docker image from the source code (make sure that we have. (i.e. current location)
 at the end of the command):
 docker build -t cmpt456-lucene-solr:6.6.7.
@@ -16,6 +18,7 @@ Ubuntu OS or Windows Subsystem for Linux (WSL)
 docker run -it cmpt456-lucene-solr:6.6.7
 
 Demo
+
 ● Index Files: this program uses standard analyzers to create tokens from input text files,
 convert them to lowercase then filer out predefined list of stop-words.
 The source code is stored in this file within the codebase:
@@ -31,6 +34,7 @@ Search demo data with the following command inside the Docker container:
 ant -f lucene/demo/build.xml run-search-index-demo
 
 PREPARATION:
+
 	Replace build.xml in < /cmpt456-project1-starter-code/lucene/demo >
 	Put HtmlIndexFiles.java ; CMPT456Analyzer.java ; stopwords.txt ; SimpleMetrics.java ; TFIDFHtmlIndexFiles.java ; TFIDFSearchFiles.java ; CMPT456Similarity.java into < /cmpt456-project1-starter-code/lucene/demo/src/java/org/apache/lucene/demo >
 	*Put PorterStemFilter.java; PorterStemmer.java into < /cmpt456-project1-starter-code/lucene/core/src/java/org/apache/lucene/analysis/standard >  
@@ -39,6 +43,7 @@ PREPARATION:
 
 
 Part 1:
+
 	I parsed every document in the articles folder, also tokenized all of them and saved them along with the original html file.  Which means, after running < ant -f lucene/demo/build.xml \-Ddocs=lucene/demo/data/wiki-small/en/articles/ run-html-indexing-demo >, all the tokens and plain text will be saved along with the html file. For example, if you enter
 < ls lucene/demo/data/wiki-small/en/articles/b/b/c/ >, will see 
 
@@ -47,10 +52,12 @@ Part 1:
 
 
 Part 2:
+
 	run < ant -f lucene/demo/build.xml \-Ddocs=lucene/demo/data/wiki-small/en/articles/ run-tfidf-indexing > and do the same things in part 1 to display the tokens.
 
 
 Part 3:
+
 	I used CMPT456Analyzer in this part.
 	run < ant -f lucene/demo/build.xml run-simple-metrics-demo > for Simple Metrics
 	run < ant -f lucene/demo/build.xml \-Ddocs=lucene/demo/data/wiki-small/en/articles/ run-tfidf-indexing > for TFIDFHtmlIndexFiles
